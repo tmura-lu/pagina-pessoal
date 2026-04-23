@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR" class="light">
+  <!-- class="dark" ativa modo escuro -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seu Nome | Página Pessoal</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF001A",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+    <!-- NAVBAR -->
+    <nav
+      class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 flex items-center justify-between h-14"
+      >
+        <!-- Logo -->
+        <a
+          href="#top"
+          class="font-semibold text-primary flex items-center gap-2"
+        >
+          <i class="fa-solid fa-code"></i> Meu Portfólio
+        </a>
+
+        <!-- Links -->
+        <ul
+          class="hidden md:flex gap-6 text-sm text-gray-600 dark:text-gray-300"
+        >
+          <li><a href="#sobre" class="hover:text-primary">Sobre</a></li>
+          <li>
+            <a href="#habilidades" class="hover:text-primary">Habilidades</a>
+          </li>
+          <li><a href="#projetos" class="hover:text-primary">Projetos</a></li>
+          <li><a href="#contato" class="hover:text-primary">Contato</a></li>
+        </ul>
+
+        <!-- Botão tema -->
+        <button
+          id="themeToggle"
+          class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header id="top" class="text-center py-10">
+      <!-- Avatar -->
+      <div
+        class="w-40 h-40 rounded-full bg-red-600 dark:bg-red-700 flex items-center justify-center text-white text-5xl font-bold tracking-wide mx-auto shadow-lg shadow-red-500/30 select-none"
+      >
+        JS
+      </div>
+
+      <h1 class="mt-4 text-2xl font-bold">Lucca</h1>
+      <p class="text-gray-500 dark:text-gray-400">
+        Estudante de Ciência da Computação
+      </p>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-5xl mx-auto px-4 pb-10">
+      <!-- SOBRE -->
+      <section id="sobre" class="py-6">
+        <h2 class="text-xl font-semibold mb-2">Sobre</h2>
+        <p class="text-gray-600 dark:text-gray-300">Um pouco sobre mim.</p>
+      </section>
+
+      <!-- HABILIDADES -->
+      <section id="habilidades" class="py-6">
+        <h2 class="text-xl font-semibold mb-2">Habilidades</h2>
+      </section>
+
+      <!-- PROJETOS -->
+      <section id="projetos" class="py-6">
+        <h2 class="text-xl font-semibold mb-4">Projetos</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- CARD -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all"
+          >
+            <h3 class="font-semibold mb-1">Nome do Projeto</h3>
+
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Breve descrição do projeto.
+            </p>
+
+            <div class="mt-auto flex gap-2">
+              <a
+                href="#"
+                class="text-sm px-3 py-1.5 rounded-lg border border-red-500 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30"
+              >
+                <i class="fa-brands fa-github mr-1"></i> Repositório
+              </a>
+
+              <a
+                href="#"
+                class="text-sm px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700"
+              >
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="py-6">
+        <h2 class="text-xl font-semibold mb-2">Contato</h2>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t py-6 text-center text-sm text-gray-500">
+      © 2026 Seu Nome
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
