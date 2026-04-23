@@ -1,0 +1,129 @@
+/* ================= NAVBAR ================= */
+.navbar-brand {
+  color: #ff001a !important;
+}
+
+.nav-link:hover {
+  color: #ff001a !important;
+}
+
+/* ================= AVATAR ================= */
+.avatar-initials {
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  background-color: #ff001a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 0, 26, 0.3);
+  user-select: none;
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
+
+/* Dark mode avatar */
+[data-bs-theme="dark"] .avatar-initials {
+  background-color: #cc0014;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 24px rgba(255, 0, 26, 0.5);
+}
+
+/* ================= SCROLL FIX ================= */
+section,
+header {
+  scroll-margin-top: 80px;
+}
+
+/* ================= HEADER BACKGROUND ================= */
+header#top {
+  background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
+}
+
+[data-bs-theme="dark"] header#top {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f0a1e 100%);
+}
+
+/* ================= CARDS ================= */
+.card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  border-top: 3px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 0, 26, 0.15);
+  border-top-color: #ff001a;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header#top .row {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+section .card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* ================= BOOTSTRAP PRIMARY FIX ================= */
+:root,
+[data-bs-theme="light"] {
+  --bs-primary: #ff001a;
+  --bs-primary-rgb: 255, 0, 26;
+  --bs-link-color: #ff001a;
+  --bs-link-hover-color: #cc0014;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  background-color: #ff001a;
+  border-color: #ff001a;
+}
+
+.btn-primary:hover {
+  background-color: #cc0014;
+  border-color: #cc0014;
+}
+
+/* ================= PROGRESS ================= */
+.progress {
+  height: 8px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #ff001a, #06b6d4);
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+/* ================= PULSE ================= */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 26, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(255, 0, 26, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 26, 0);
+  }
+}
