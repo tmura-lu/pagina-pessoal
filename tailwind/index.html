@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="pt-BR" class="light">
-  <!-- class="dark" ativa modo escuro -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seu Nome | Página Pessoal</title>
+    <title>Lucca Guedes Batistela | Página Pessoal</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,7 +13,18 @@
         theme: {
           extend: {
             colors: {
-              primary: "#FF001A",
+              primary: {
+                50: "#FFE5E8",
+                100: "#FFCCD1",
+                200: "#FF99A3",
+                300: "#FF6675",
+                400: "#FF3347",
+                500: "#FF001A",
+                600: "#CC0014",
+                700: "#99000F",
+                800: "#66000A",
+                900: "#330005",
+              },
             },
           },
         },
@@ -28,8 +38,10 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
-  <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-    <!-- NAVBAR -->
+  <body
+    class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
+    <!-- ========== NAVBAR ========== -->
     <nav
       class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm"
     >
@@ -39,107 +51,578 @@
         <!-- Logo -->
         <a
           href="#top"
-          class="font-semibold text-primary flex items-center gap-2"
+          class="font-semibold text-primary-600 dark:text-primary-400 flex items-center gap-2 hover:text-primary-500 transition-colors"
         >
-          <i class="fa-solid fa-code"></i> Meu Portfólio
+          <i class="fa-solid fa-vr-cardboard"></i> Lucca Batistela
         </a>
 
         <!-- Links -->
         <ul
           class="hidden md:flex gap-6 text-sm text-gray-600 dark:text-gray-300"
         >
-          <li><a href="#sobre" class="hover:text-primary">Sobre</a></li>
           <li>
-            <a href="#habilidades" class="hover:text-primary">Habilidades</a>
+            <a href="#sobre" class="hover:text-primary-500 transition-colors"
+              >Sobre</a
+            >
           </li>
-          <li><a href="#projetos" class="hover:text-primary">Projetos</a></li>
-          <li><a href="#contato" class="hover:text-primary">Contato</a></li>
+          <li>
+            <a
+              href="#habilidades"
+              class="hover:text-primary-500 transition-colors"
+              >Habilidades</a
+            >
+          </li>
+          <li>
+            <a href="#projetos" class="hover:text-primary-500 transition-colors"
+              >Projetos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#interesses"
+              class="hover:text-primary-500 transition-colors"
+              >Interesses</a
+            >
+          </li>
+          <li>
+            <a href="#contato" class="hover:text-primary-500 transition-colors"
+              >Contato</a
+            >
+          </li>
         </ul>
 
         <!-- Botão tema -->
         <button
           id="themeToggle"
-          class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
+          aria-label="Alternar tema"
+          class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm transition-colors"
         >
           <i class="fa-solid fa-moon"></i>
         </button>
       </div>
     </nav>
 
-    <!-- HEADER -->
-    <header id="top" class="text-center py-10">
-      <!-- Avatar -->
-      <div
-        class="w-40 h-40 rounded-full bg-red-600 dark:bg-red-700 flex items-center justify-center text-white text-5xl font-bold tracking-wide mx-auto shadow-lg shadow-red-500/30 select-none"
-      >
-        JS
-      </div>
+    <!-- ========== HEADER ========== -->
+    <header
+      id="top"
+      class="py-14 bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-950"
+    >
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-10">
+          <!-- Avatar -->
+          <div class="flex-shrink-0 text-center">
+            <div
+              class="avatar-initials w-40 h-40 rounded-full bg-primary-500 dark:bg-primary-600 flex items-center justify-center text-white text-5xl font-bold tracking-wide mx-auto shadow-xl shadow-primary-500/30 select-none"
+            >
+              LG
+            </div>
+            <div
+              class="mt-3 flex flex-wrap gap-2 justify-content-center justify-center"
+            >
+              <span
+                class="inline-block bg-primary-500 text-white text-xs font-medium px-3 py-1 rounded-full"
+              >
+                Ciência da Computação
+              </span>
+              <span
+                class="inline-block bg-gray-500 text-white text-xs font-medium px-3 py-1 rounded-full"
+              >
+                UFLA
+              </span>
+            </div>
+          </div>
 
-      <h1 class="mt-4 text-2xl font-bold">Lucca</h1>
-      <p class="text-gray-500 dark:text-gray-400">
-        Estudante de Ciência da Computação
-      </p>
+          <!-- Texto -->
+          <div class="text-center lg:text-left">
+            <h1 class="text-3xl font-bold mb-3">
+              Olá! Eu sou <span class="text-primary-500">Lucca</span>
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 text-lg mb-6 max-w-lg">
+              Estudante de Ciência da Computação na UFLA, apaixonado por
+              desenvolvimento web, realidade virtual e novas tecnologias.
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <a
+                href="#projetos"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-500 text-white text-sm font-medium hover:bg-primary-600 transition-colors"
+              >
+                <i class="fa-solid fa-diagram-project"></i> Ver projetos
+              </a>
+              <a
+                href="https://github.com/tmura-lu"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/lucca-guedes-batistela-471675290/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="max-w-5xl mx-auto px-4 pb-10">
-      <!-- SOBRE -->
-      <section id="sobre" class="py-6">
-        <h2 class="text-xl font-semibold mb-2">Sobre</h2>
-        <p class="text-gray-600 dark:text-gray-300">Um pouco sobre mim.</p>
+    <!-- ========== MAIN ========== -->
+    <main class="max-w-5xl mx-auto px-4 pb-12">
+      <!-- ── Sobre ─────────────────────────── -->
+      <section id="sobre" class="py-10">
+        <h2 class="text-xl font-semibold mb-1">Sobre</h2>
+        <p class="text-sm text-gray-400 mb-6">Um pouco sobre mim</p>
+
+        <div class="grid md:grid-cols-3 gap-4">
+          <!-- Bio -->
+          <div
+            class="md:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 card-hover"
+          >
+            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-user text-primary-500"></i> Quem sou eu
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              Estudante de Ciência da Computação com foco em Engenharia de
+              Software e desenvolvimento de sistemas. Atualmente iniciando minha
+              trajetória profissional na área de tecnologia, buscando aplicar na
+              prática conceitos de desenvolvimento, boas práticas de código e
+              resolução de problemas. Possuo experiência com Java, Python, C++ e
+              C#, e tenho interesse em atuar em projetos que envolvam
+              construção, manutenção e evolução de software, contribuindo com
+              soluções eficientes e escaláveis.
+            </p>
+          </div>
+
+          <!-- Formação -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 card-hover"
+          >
+            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap text-primary-500"></i>
+              Formação
+            </h3>
+            <p class="text-sm font-semibold text-gray-900 dark:text-white">
+              Ciência da Computação
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">
+              UFLA – Universidade Federal de Lavras
+            </p>
+            <p class="text-xs text-gray-400 mt-1">2023 – cursando</p>
+          </div>
+        </div>
       </section>
 
-      <!-- HABILIDADES -->
-      <section id="habilidades" class="py-6">
-        <h2 class="text-xl font-semibold mb-2">Habilidades</h2>
+      <!-- ── Habilidades ──────────────────── -->
+      <section id="habilidades" class="py-10">
+        <h2 class="text-xl font-semibold mb-1">Habilidades</h2>
+        <p class="text-sm text-gray-400 mb-6">Tecnologias e competências</p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- Linguagens + barras -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 card-hover"
+          >
+            <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-code text-primary-500"></i> Linguagens de
+              Programação
+            </h3>
+
+            <!-- Java -->
+            <div class="mb-4">
+              <div class="flex justify-between mb-1">
+                <span class="text-xs font-semibold">Java</span>
+                <span class="text-xs text-gray-400">Intermediário</span>
+              </div>
+              <div
+                class="w-full h-2 rounded-full bg-primary-50 dark:bg-primary-900/20"
+              >
+                <div
+                  class="h-2 rounded-full progress-bar"
+                  style="width: 70%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Python -->
+            <div class="mb-4">
+              <div class="flex justify-between mb-1">
+                <span class="text-xs font-semibold">Python</span>
+                <span class="text-xs text-gray-400">Intermediário</span>
+              </div>
+              <div
+                class="w-full h-2 rounded-full bg-primary-50 dark:bg-primary-900/20"
+              >
+                <div
+                  class="h-2 rounded-full progress-bar"
+                  style="width: 65%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- C# -->
+            <div class="mb-4">
+              <div class="flex justify-between mb-1">
+                <span class="text-xs font-semibold">C#</span>
+                <span class="text-xs text-gray-400">Básico–Intermediário</span>
+              </div>
+              <div
+                class="w-full h-2 rounded-full bg-primary-50 dark:bg-primary-900/20"
+              >
+                <div
+                  class="h-2 rounded-full progress-bar"
+                  style="width: 55%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- C++ -->
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-xs font-semibold">C++</span>
+                <span class="text-xs text-gray-400">Básico</span>
+              </div>
+              <div
+                class="w-full h-2 rounded-full bg-primary-50 dark:bg-primary-900/20"
+              >
+                <div
+                  class="h-2 rounded-full progress-bar"
+                  style="width: 40%"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tecnologias + Soft skills -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 card-hover"
+          >
+            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-layer-group text-primary-500"></i>
+              Tecnologias &amp; Ferramentas
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="skill-badge">Unity</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Spring Boot</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">NetworkX</span>
+              <span class="skill-badge">HTML / CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">Git / GitHub</span>
+            </div>
+
+            <h3 class="text-sm font-semibold mb-3 flex items-center gap-2">
+              <i class="fa-solid fa-people-group text-primary-500"></i>
+              Competências
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="soft-badge">Liderança</span>
+              <span class="soft-badge">Comunicação</span>
+              <span class="soft-badge">Resolução de problemas</span>
+              <span class="soft-badge">Gestão de projetos</span>
+              <span class="soft-badge">Design de UX</span>
+              <span class="soft-badge">Inglês C1</span>
+              <span class="soft-badge">Chinês A2</span>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- PROJETOS -->
-      <section id="projetos" class="py-6">
-        <h2 class="text-xl font-semibold mb-4">Projetos</h2>
+      <!-- ── Projetos ─────────────────────── -->
+      <section id="projetos" class="py-10">
+        <h2 class="text-xl font-semibold mb-1">Projetos</h2>
+        <p class="text-sm text-gray-400 mb-6">O que já desenvolvi</p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- CARD -->
+          <!-- VR Telemedicina -->
           <div
-            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col hover:shadow-md hover:-translate-y-1 transition-all"
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col card-hover"
           >
-            <h3 class="font-semibold mb-1">Nome do Projeto</h3>
-
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-              Breve descrição do projeto.
+            <span
+              class="text-xs font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded-full self-start mb-2"
+            >
+              Unity · C#
+            </span>
+            <h3 class="text-sm font-semibold mb-2">
+              Desenvolvedor de Realidade Virtual
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Solução de realidade virtual aplicada à telemedicina. Cenários
+              imersivos e scripts para objetos dinâmicos com Unity e C#,
+              aplicando conceitos de IHC.
             </p>
+            <div class="mt-auto pt-4">
+              <span
+                class="inline-flex items-center gap-1 text-xs text-gray-400 border border-gray-200 dark:border-gray-600 px-2 py-1 rounded-lg"
+              >
+                <i class="fa-solid fa-lock"></i> Privado
+              </span>
+            </div>
+          </div>
 
-            <div class="mt-auto flex gap-2">
+          <!-- CARP -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col card-hover"
+          >
+            <span
+              class="text-xs font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded-full self-start mb-2"
+            >
+              Python · NetworkX
+            </span>
+            <h3 class="text-sm font-semibold mb-2">
+              CARP – Algoritmos em Grafos
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Análise e visualização de grafos aplicados ao Capacitated Arc
+              Routing Problem. Algoritmo guloso, métricas e visualização
+              interativa com NetworkX e Matplotlib.
+            </p>
+            <div class="mt-auto pt-4 flex gap-2">
               <a
-                href="#"
-                class="text-sm px-3 py-1.5 rounded-lg border border-red-500 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30"
+                href="https://github.com/tmura-lu/projeto_carp_grafos"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-3 py-1.5 rounded-lg border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
               >
                 <i class="fa-brands fa-github mr-1"></i> Repositório
               </a>
+            </div>
+          </div>
 
+          <!-- Zona Z -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col card-hover"
+          >
+            <span
+              class="text-xs font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded-full self-start mb-2"
+            >
+              HTML · CSS · JS
+            </span>
+            <h3 class="text-sm font-semibold mb-2">Zona Z</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Jogo web onde o jogador controla um zumbi em um tabuleiro para
+              capturar um sobrevivente por estratégia e movimentação em turnos.
+            </p>
+            <div class="mt-auto pt-4 flex gap-2">
               <a
-                href="#"
-                class="text-sm px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700"
+                href="https://github.com/tmura-lu/zona_z"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-3 py-1.5 rounded-lg border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+              >
+                <i class="fa-brands fa-github mr-1"></i> Repositório
+              </a>
+              <a
+                href="https://tmura-lu.github.io/zona_z/"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-3 py-1.5 rounded-lg bg-primary-500 text-white hover:bg-primary-600 transition-colors"
               >
                 Demo
+              </a>
+            </div>
+          </div>
+
+          <!-- Lumière d'Or -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col card-hover"
+          >
+            <span
+              class="text-xs font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20 px-2 py-0.5 rounded-full self-start mb-2"
+            >
+              React · Spring Boot · PostgreSQL
+            </span>
+            <h3 class="text-sm font-semibold mb-2">
+              Lumière d'Or – E-commerce
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              Sistema web para joalheria fictícia com perfis de cliente e
+              administrador. Front-end em React (Vite + MUI) e back-end em
+              Spring Boot com PostgreSQL, integrando API REST a uma interface
+              moderna de e-commerce.
+            </p>
+            <div class="mt-auto pt-4 flex gap-2">
+              <a
+                href="https://github.com/tmura-lu/Lumiere-dOr"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-3 py-1.5 rounded-lg border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+              >
+                <i class="fa-brands fa-github mr-1"></i> Repositório
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- CONTATO -->
-      <section id="contato" class="py-6">
-        <h2 class="text-xl font-semibold mb-2">Contato</h2>
+      <!-- ── Interesses ───────────────────── -->
+      <section id="interesses" class="py-10">
+        <h2 class="text-xl font-semibold mb-1">Interesses</h2>
+        <p class="text-sm text-gray-400 mb-6">O que me move além do código</p>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col items-center text-center card-hover"
+          >
+            <div class="interest-icon mb-3">
+              <i class="fa-solid fa-vr-cardboard text-primary-500 text-2xl"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-1">Realidade Virtual</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Experiências imersivas com Unity aplicadas à saúde digital.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col items-center text-center card-hover"
+          >
+            <div class="interest-icon mb-3">
+              <i class="fa-solid fa-globe text-primary-500 text-2xl"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-1">Idiomas</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Inglês avançado (C1) e Chinês básico (A2).
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col items-center text-center card-hover"
+          >
+            <div class="interest-icon mb-3">
+              <i class="fa-solid fa-sitemap text-primary-500 text-2xl"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-1">Eng. de Software</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Arquitetura, código limpo e desenvolvimento ágil.
+            </p>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5 flex flex-col items-center text-center card-hover"
+          >
+            <div class="interest-icon mb-3">
+              <i class="fa-solid fa-gamepad text-primary-500 text-2xl"></i>
+            </div>
+            <h3 class="text-sm font-semibold mb-1">Dev. de Jogos</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              Game design e mecânicas, unindo lógica e criatividade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Contato ──────────────────────── -->
+      <section id="contato" class="py-10">
+        <h2 class="text-xl font-semibold mb-1">Contato</h2>
+        <p class="text-sm text-gray-400 mb-6">Vamos conversar?</p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- Links -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 card-hover"
+          >
+            <h3 class="text-sm font-semibold mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-address-card text-primary-500"></i>
+              Informações
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <span class="contact-icon-wrap">
+                  <i class="fa-brands fa-github text-primary-500"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">GitHub</p>
+                  <a
+                    href="https://github.com/tmura-lu"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-sm font-semibold hover:text-primary-500 transition-colors"
+                  >
+                    github.com/tmura-lu
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="contact-icon-wrap">
+                  <i class="fa-brands fa-linkedin text-primary-500"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">LinkedIn</p>
+                  <a
+                    href="https://linkedin.com/in/lucca-guedes-batistela-471675290/"
+                    target="_blank"
+                    rel="noopener"
+                    class="text-sm font-semibold hover:text-primary-500 transition-colors"
+                  >
+                    Lucca Guedes Batistela
+                  </a>
+                </div>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="contact-icon-wrap">
+                  <i class="fa-solid fa-location-dot text-primary-500"></i>
+                </span>
+                <div>
+                  <p class="text-xs text-gray-400">Localização</p>
+                  <span class="text-sm font-semibold">Lavras, MG – Brasil</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTA -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-6 flex flex-col items-center justify-center text-center card-hover"
+          >
+            <i class="fa-solid fa-comments text-primary-500 text-3xl mb-3"></i>
+            <h3 class="text-sm font-semibold mb-2">Aberto a oportunidades</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-5 max-w-xs">
+              Estou em busca de estágios, projetos acadêmicos e colaborações em
+              desenvolvimento de software. Sinta-se à vontade para entrar em
+              contato!
+            </p>
+            <div class="flex gap-2">
+              <a
+                href="https://github.com/tmura-lu"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-4 py-2 rounded-lg bg-primary-500 text-white hover:bg-primary-600 transition-colors"
+              >
+                <i class="fa-brands fa-github mr-1"></i> GitHub
+              </a>
+              <a
+                href="https://linkedin.com/in/lucca-guedes-batistela-471675290/"
+                target="_blank"
+                rel="noopener"
+                class="text-sm px-4 py-2 rounded-lg border border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors"
+              >
+                <i class="fa-brands fa-linkedin mr-1"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t py-6 text-center text-sm text-gray-500">
-      © 2026 Seu Nome
+    <!-- ========== FOOTER ========== -->
+    <footer class="border-t border-gray-200 dark:border-gray-700 py-6">
+      <div
+        class="max-w-5xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2"
+      >
+        <small class="text-sm text-gray-400"
+          >© <span id="year"></span> Lucca Guedes Batistela</small
+        >
+        <small class="text-sm text-gray-400"
+          >Feito com Tailwind CSS · UFLA GAC116</small
+        >
+      </div>
     </footer>
 
-    <!-- SCRIPT -->
     <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ var btn = document.getElementById("themeToggle");
 
 function applyTheme(theme) {
   if (theme === "dark") {
-    html.classList.add("dark"); // Tailwind usa classe dark
+    html.classList.add("dark");
   } else {
     html.classList.remove("dark");
   }
