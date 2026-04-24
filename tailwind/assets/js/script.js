@@ -14,9 +14,14 @@ function applyTheme(theme) {
       theme === "dark"
         ? '<i class="fa-solid fa-sun"></i>'
         : '<i class="fa-solid fa-moon"></i>';
+    btn.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Ativar tema claro" : "Ativar tema escuro",
+    );
   }
 }
 
+// Restaurar tema salvo ou usar claro como padrão
 applyTheme(localStorage.getItem("theme") || "light");
 
 if (btn) {
@@ -25,3 +30,7 @@ if (btn) {
     applyTheme(isDark ? "light" : "dark");
   });
 }
+
+//  Ano automático no rodapé
+var yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
