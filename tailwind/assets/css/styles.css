@@ -1,0 +1,125 @@
+/* ── Avatar pulsante ─────────────────────── */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 26, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(255, 0, 26, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 26, 0);
+  }
+}
+
+.avatar-initials {
+  animation: pulse-ring 2.8s ease-in-out infinite;
+}
+
+/* ── Barra de progresso gradiente ─────────── */
+.progress-bar {
+  background: linear-gradient(90deg, #ff001a, #ff6675);
+  border-radius: 999px;
+  transition: width 1.2s ease;
+}
+
+/* ── Hover nos cards ─────────────────────── */
+.card-hover {
+  border-top: 3px solid transparent;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 0, 26, 0.12);
+  border-top-color: #ff001a;
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 10px 30px rgba(255, 0, 26, 0.25);
+}
+
+/* ── Badges de skill ─────────────────────── */
+.skill-badge {
+  display: inline-block;
+  background-color: #ff001a;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.dark .skill-badge {
+  background-color: #cc0014;
+}
+
+.soft-badge {
+  display: inline-block;
+  background-color: #6b7280;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ── Ícone de interesse ──────────────────── */
+.interest-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background-color: #ffe5e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.dark .interest-icon {
+  background-color: rgba(255, 0, 26, 0.15);
+}
+
+.card-hover:hover .interest-icon {
+  background-color: #ffccd1;
+}
+
+/* ── Ícone de contato ────────────────────── */
+.contact-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #ffe5e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dark .contact-icon-wrap {
+  background-color: rgba(255, 0, 26, 0.15);
+}
+
+/* ── Scroll com navbar fixa ──────────────── */
+section,
+header {
+  scroll-margin-top: 80px;
+}
+
+/* ── Animação de entrada ─────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  animation: fadeInUp 0.65s ease forwards;
+}
