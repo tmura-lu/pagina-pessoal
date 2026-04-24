@@ -24,9 +24,9 @@ pagina-pessoal/
 
 ## Bootstrap vs Tailwind
 
-**Bootstrap** trabalha com componentes prontos — `btn`, `card`, `navbar` já entregam um visual funcional sem esforço. O modo escuro é gerenciado pelo atributo `data-bs-theme` na tag `<html>`, então a troca de tema não exige escrever nada extra no HTML.
+**Bootstrap** trabalha com componentes prontos, como `btn`, `card`, `navbar` já entregam um visual funcional sem esforço. O modo escuro é gerenciado pelo atributo `data-bs-theme` na tag `<html>`, então a troca de tema não exige escrever nada extra no HTML.
 
-**Tailwind** usa classes utilitárias atômicas — cada elemento é construído combinando `flex`, `p-4`, `rounded-xl` e afins diretamente no HTML. O modo escuro exige o prefixo `dark:` em cada classe afetada, o que dá mais controle mas deixa o HTML bem mais verboso.
+**Tailwind** usa classes utilitárias atômicas, ou seja, cada elemento é construído combinando `flex`, `p-4`, `rounded-xl` e afins diretamente no HTML. O modo escuro exige o prefixo `dark:` em cada classe afetada, o que dá mais controle mas deixa o HTML bem mais verboso.
 
 ## O que gostei
 
@@ -38,4 +38,4 @@ No Tailwind, gostei do controle total sobre o visual e da legibilidade dos break
 
 No Bootstrap, sobrescrever a cor primária exigiu reescrever variáveis CSS e várias classes manualmente, com uso de `!important`. O resultado visual também carrega a "aparência de Bootstrap" que é difícil de disfarçar sem muito CSS extra.
 
-No Tailwind, a falta de componentes prontos aparece na navbar mobile — o que o Bootstrap resolve com dois atributos `data-bs-*`, no Tailwind exigiria JS adicional. A verbosidade das classes em elementos repetidos como cards também incomoda.
+No Tailwind, a falta de componentes prontos aparece na navbar mobile, que o Bootstrap resolve com dois atributos `data-bs-*`, no Tailwind exigiria JS adicional. A verbosidade das classes em elementos repetidos como cards também incomoda.
