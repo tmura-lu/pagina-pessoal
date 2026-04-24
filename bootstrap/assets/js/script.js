@@ -1,26 +1,22 @@
-// Pega referências dos elementos
-var root = document.documentElement; // a tag <html>
+var root = document.documentElement;
 var btn = document.getElementById("themeToggle");
 
-// Aplica um tema e salva no localStorage
 function applyTheme(theme) {
-  root.setAttribute("data-bs-theme", theme); // Bootstrap reage automaticamente
-  localStorage.setItem("theme", theme); // persiste entre sessões
+  root.setAttribute("data-bs-theme", theme);
+  localStorage.setItem("theme", theme);
 
-  // Troca o ícone do botão
   if (btn) {
     btn.innerHTML =
       theme === "dark"
-        ? '<i class="fa-solid fa-sun"></i>' // escuro → mostrar sol
-        : '<i class="fa-solid fa-moon"></i>'; // claro  → mostrar lua
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
   }
 }
 
-// Na carga da página: restaurar o tema salvo, ou usar claro
 var savedTheme = localStorage.getItem("theme");
 applyTheme(savedTheme || "light");
 
-// Ao clicar no botão: alterna entre light e dark
+// Ao clicar no botão alterna entre light e dark
 if (btn) {
   btn.addEventListener("click", function () {
     var atual = root.getAttribute("data-bs-theme");
